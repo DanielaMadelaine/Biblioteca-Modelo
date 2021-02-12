@@ -20,7 +20,7 @@ public class Biblioteca {
 	
 	//métodos
      
-     Public void PrestarLibro(){
+     public void PrestarLibro(){
        }
 	
 	
