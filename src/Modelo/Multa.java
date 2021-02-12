@@ -30,7 +30,7 @@ public class Multa {
 		Ffin = ffin;
 	}
 
-	
+	//agregar constructor y métodos 
 	
 	
 }
