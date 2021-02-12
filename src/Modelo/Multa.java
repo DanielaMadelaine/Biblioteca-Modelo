@@ -3,10 +3,19 @@ package Modelo;
 import java.util.Date;
 
 public class Multa {
-	
+
+	private Lector unlector;
 	private Date Finicio;
 	private Date Ffin;
 	
+        public Lector getunlector(){
+        return unlector;
+         }
+         
+         public void setunlector(Lector l){
+         unlector= l;
+         }
+       
 	
 	public Date getFinicio() {
 		return Finicio;
