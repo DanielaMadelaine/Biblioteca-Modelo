@@ -19,5 +19,7 @@ public class Prestamo {
 	public void setFfinPrestamo(Date ffinPrestamo) {
 		FfinPrestamo = ffinPrestamo;
 	}
+
+       // agregar métodos 
 	
 }
