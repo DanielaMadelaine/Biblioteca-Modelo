@@ -33,6 +33,12 @@ public class Lector {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
+       
+       // métodos 
+
+       public void DevolverLibro() {
+        }
 	
 	
 	
