@@ -1,11 +1,14 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Prestamo {
 
 	private Date finicioPrestamo;
 	private Date FfinPrestamo;
+	
+	private ArrayList<Lector> lectores= new ArrayList<Lector>();
 	
 	public Date getFinicioPrestamo() {
 		return finicioPrestamo;
@@ -19,6 +22,8 @@ public class Prestamo {
 	public void setFfinPrestamo(Date ffinPrestamo) {
 		FfinPrestamo = ffinPrestamo;
 	}
+	
+	
 
        // agregar metodos
 	

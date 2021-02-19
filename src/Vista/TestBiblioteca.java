@@ -81,11 +81,13 @@ public class TestBiblioteca {
 		
 		// BIBLIOTECA
 		
-		Biblioteca obj = new Biblioteca ();
+		Biblioteca biblioteca = new Biblioteca ();
 		
-		obj.setCopias(libros);
+		biblioteca.setCopias(libros);
 		
-		System.out.println(obj.getCopias());
+		biblioteca.listarLibros();
+		
+		
 		
 
 	}

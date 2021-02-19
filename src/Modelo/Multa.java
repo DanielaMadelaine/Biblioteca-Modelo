@@ -8,7 +8,16 @@ public class Multa {
 	private Date Finicio;
 	private Date Ffin;
 	
-        public Lector getunlector(){
+	
+	
+	
+        public Multa(Lector unlector) {
+		super();
+		this.unlector = unlector;
+		
+	}
+
+		public Lector getunlector(){
         return unlector;
          }
          
@@ -30,7 +39,7 @@ public class Multa {
 		Ffin = ffin;
 	}
 
-	//agregar constructor y métodos 
+	
 	
 	
 }
