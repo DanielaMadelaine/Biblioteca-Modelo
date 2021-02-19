@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class Biblioteca {
@@ -18,9 +19,11 @@ public class Biblioteca {
 	
 	
 	
-	//métodos
+	//metodos
      
-     public void PrestarLibro(){
+     public void PrestarLibro(int idLibro,int idLector, Date cuando){
+    	 
+    	 
        }
 	
 	

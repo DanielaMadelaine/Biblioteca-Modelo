@@ -9,6 +9,15 @@ public class Lector {
 	
 	
 	
+	public Lector(int nSocio, String nombre, String telefono, String direccion) {
+		super();
+		this.nSocio = nSocio;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.direccion = direccion;
+	}
+	
+	
 	public int getnSocio() {
 		return nSocio;
 	}
@@ -34,10 +43,18 @@ public class Lector {
 		this.direccion = direccion;
 	}
 
+	
+	
        
-       // m√©todos 
+       // metodos
 
-       public void DevolverLibro() {
+       @Override
+	public String toString() {
+		return "Lector: " + nombre +"  " +"N∫ de socio: "+ nSocio +"  "+ "Telefono: " + telefono +"  "+ "Direccion: " + direccion;
+	}
+
+
+	public void DevolverLibro() {
         }
 	
 	

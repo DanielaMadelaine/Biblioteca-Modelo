@@ -20,6 +20,6 @@ public class Prestamo {
 		FfinPrestamo = ffinPrestamo;
 	}
 
-       // agregar métodos 
+       // agregar metodos
 	
 }

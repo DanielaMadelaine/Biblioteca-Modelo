@@ -6,9 +6,13 @@ public class Copia extends Libro {
 	private int idCopia;
 	private EstadoCopia estado;
 	
-	public Copia(String titulo, TipoLibro tipo, String editorial, int anio, Autor autorLib) {
+	public Copia(String titulo, TipoLibro tipo, String editorial, int anio, Autor autorLib,EstadoCopia estado,int id) {
 		super(titulo, tipo, editorial, anio, autorLib);
 		// TODO Auto-generated constructor stub
+		
+		this.estado =estado;
+		this.idCopia=id;
+		
 	}
 	
 
@@ -17,7 +21,7 @@ public class Copia extends Libro {
 		return idCopia;
 	}
 	public void setIdCopia(int idCopia) {
-		this.idCopia = idCopia;
+		this.idCopia = idCopia+1;
 	}
 	public EstadoCopia getEstado() {
 		return estado;
@@ -30,10 +34,8 @@ public class Copia extends Libro {
 
 	@Override
 	public String toString() {
-		return "Copia [idCopia=" + idCopia + ", estado=" + estado + ", getIdCopia()=" + getIdCopia() + ", getEstado()="
-				+ getEstado() + ", getTitulo()=" + getTitulo() + ", getEditorial()=" + getEditorial() + ", getAnio()="
-				+ getAnio() + ", getTipo()=" + getTipo() + ", getAutorLib()=" + getAutorLib() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Libros : " + getTitulo() +"  "+ "Editorial:" + getEditorial()+"  " + "Año:"
+				+getAnio() + "  " + getTipo() + "  " + getAutorLib();
 	}
 	
 	

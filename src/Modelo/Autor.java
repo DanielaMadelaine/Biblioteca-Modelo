@@ -41,7 +41,7 @@ public class Autor {
 
 	@Override
 	public String toString() {
-		return "Autor [Nombre=" + Nombre + ", Nacionalidad=" + Nacionalidad + ", fechaNac=" + fechaNac + "]";
+		return "Autor: " + Nombre +"  "+ "Nacionalidad: " + Nacionalidad +"  "+ "Fecha Nacimiento: " + fechaNac;
 	}
 	
 	

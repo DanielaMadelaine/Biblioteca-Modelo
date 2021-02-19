@@ -31,7 +31,7 @@ public class TipoLibro {
 
 	@Override
 	public String toString() {
-		return "TipoLibro =  id :" + idTipo + " descripcion: " + descripcion ;
+		return "Tipo Libro: " + descripcion ;
 	}
 	
 	
