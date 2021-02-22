@@ -7,6 +7,7 @@ import Modelo.Biblioteca;
 import Modelo.Copia;
 import Modelo.EstadoCopia;
 import Modelo.Lector;
+import Modelo.Multa;
 import Modelo.TipoLibro;
 
 public class TestBiblioteca {
@@ -63,7 +64,7 @@ public class TestBiblioteca {
 		Copia libro8 = new Copia("Fuenteovejuna", tipo2,"AGeBe",1619, autor6, EstadoCopia.Prestado,31);
 		Copia libro9 = new Copia("Hamlet", tipo1,"Colihue",1603, autor1, EstadoCopia.Biblioteca,20);
 		Copia libro10 = new Copia("El gato negro", tipo1,"Austral",1843, autor2, EstadoCopia.Prestado,24);
-		
+		//Agregar 2 copias mas de harry potter para probrar ..
 		System.out.println(libro10.getEstado());
 		
 		ArrayList<Copia> libros = new ArrayList<Copia>();
@@ -86,6 +87,29 @@ public class TestBiblioteca {
 		biblioteca.setCopias(libros);
 		
 		biblioteca.listarLibros();
+		
+		
+		
+		biblioteca.PrestarLibro(libro2, LectorA);
+		biblioteca.PrestarLibro(libro3, LectorA);
+		LectorA.setMulta(new Multa(LectorA));
+		biblioteca.PrestarLibro(libro6, LectorA);
+		biblioteca.PrestarLibro(libro9, LectorA);
+		
+		biblioteca.listarLibros();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

@@ -11,7 +11,13 @@ public class Multa {
 	
 	
 	
-        public Multa(Lector unlector) {
+        public Multa(Date finicio, Date ffin) {
+		super();
+		Finicio = finicio;
+		Ffin = ffin;
+	}
+
+		public Multa(Lector unlector) {
 		super();
 		this.unlector = unlector;
 		

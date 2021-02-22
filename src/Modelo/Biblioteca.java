@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,9 +8,10 @@ import java.util.Date;
 public class Biblioteca {
 
 	private ArrayList<Copia> StockDisponible = new ArrayList<Copia>();
-	private ArrayList<Prestamo> prestamos =new ArrayList<Prestamo>();
+	LocalDate fechaActual = LocalDate.now();
 
 	public ArrayList<Copia> getCopias() {
+		
 		return StockDisponible;
 	}
 
@@ -36,52 +38,76 @@ public class Biblioteca {
      
      public boolean PrestarLibro(Copia unLibro,Lector unLector){
     	 
+    	 Date fecha = new Date(121,8,24);
+    	 
     	 boolean pudo = false;
     	 
  		Copia copiaDisponible = buscarCopiaDisponible(unLibro);
+ 		
  		if (copiaDisponible == null)
  		{
  			System.out.println("Este libro no esta disponible");
- 		}//else if (//tiene multas el lector? )
+ 		}else if (unLector.getMulta() == null )
+ 		{
+ 			// le podemos presta 
+ 			if(unLector.getPrestamo().size() < 3 )
+ 			{
  			
- 				//fijarme si el lector tiene 3 libros en prestamo	
+ 				unLector.getPrestamo().add(new Prestamo(copiaDisponible, unLector,fecha) );
+ 				copiaDisponible.setEstado(EstadoCopia.Prestado);
+ 				System.out.println("libro prestado :) "+unLibro.getTitulo());
+ 				return true;
+ 				
+ 			}else {
+ 				
+ 				System.out.println("El lector tiene mas de 3 libros prestados.. no se puede");
+ 			}
  			
- 		/*if (lector.NoPuedePedir()) {
- 		} else if (copiaEnBib == null) {
- 			throw new NoTieneLaCopia("Ese libro no esta Disponible");
- 		} else if (TienePrestamosVencidos(lector)) {
- 			System.out.println("Posee Prestamos Vencidos");
- 		} else {
- 			lector.getPrestamos().add(new Prestamo(hoy, lector, copia));
- 			estadoCopia(copiaEnBib, estadoCopia.PRESTADO);
- 			pudo = true;
- 		*/
+ 		}else {
+ 			//Si tiene multa
+ 			System.out.println("No se puede, tiene multa vigente");
+ 		}
+ 			
  		return pudo;
-    	 
-    	 
+    	  
        }
      
      public void listarLibros() {
  		
  		System.out.println("Listado de libros en stock: ");
  		System.out.println("");
- 		//Copia c;
- 		
- 		//if(c.getEstado() != "Prestado")
- 			//podria poner condicion si no esta prestado es xq esta disponible
  		for (Copia copia : StockDisponible) {
- 			System.out.println("Nombre:" + copia.getTitulo() +"  " +"ID:" + copia.getIdCopia());
+ 				System.out.println("Nombre:" + copia.getTitulo() +"\t" +"ID:" + copia.getIdCopia()+"  "+"Estado: "+copia.getEstado());
+	
  		}
  	}
 	
-     private void multarLector(Lector lector, Copia copias)  {
- 		lector.getMultas().add(new Multa(lector));
- 		copias.setEstado(EstadoCopia.Retraso);
+     
+
+     
+     
+     public void multarLector(Lector lector)  {
+    	 
+    	
+    	 
+    	// lector.setMulta(new Multa(hoy, ffin);
+ 		
+
  	}
      
-     public int ContarPrestamos() {
- 		int contador = prestamos.size();
- 		return contador;
- 	}
+     
+     public void DevolverLibro(Copia unLibro,Lector unLector) {
+    	 
+    	 
+    	 Prestamo p= unLector.buscarCopiaEnPrestamo(unLibro);
+    	 
+    	 if(p !=null)
+    	 {
+    		 // Si el libro que queremos devolver, lo tiene el lector es true 
+    		 //Calcular dias , buscar como calcular dias
+    		//long dias = (fechaActual.until(arg0, arg1) - p.getFinicioPrestamo());
+    	 }
+    	 
+     }
 	
 }

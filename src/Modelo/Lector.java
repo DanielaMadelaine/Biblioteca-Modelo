@@ -8,7 +8,9 @@ public class Lector {
 	private String nombre;
 	private String telefono;
 	private String direccion;
-	private ArrayList<Multa> multas =new ArrayList<Multa>();
+	private Multa multa;
+	private ArrayList<Prestamo> prestamo = new ArrayList<Prestamo>();
+     
 	
 	
 	public Lector(int nSocio, String nombre, String telefono, String direccion) {
@@ -46,14 +48,23 @@ public class Lector {
 	}
 
 
-
-       public ArrayList<Multa> getMultas() {
-		return multas;
+	public Multa getMulta() {
+		return multa;
 	}
 
 
-	public void setMultas(ArrayList<Multa> multas) {
-		this.multas = multas;
+	public void setMulta(Multa multa) {
+		this.multa = multa;
+	}
+
+
+	public ArrayList<Prestamo> getPrestamo() {
+		return prestamo;
+	}
+
+
+	public void setPrestamo(ArrayList<Prestamo> prestamo) {
+		this.prestamo = prestamo;
 	}
 
 
@@ -62,11 +73,19 @@ public class Lector {
 		return "Lector: " + nombre +"  " +"Nº de socio: "+ nSocio +"  "+ "Telefono: " + telefono +"  "+ "Direccion: " + direccion;
 	}
 
-
-	public void DevolverLibro() {
-        }
-	
-	
-	
+	 public Prestamo buscarCopiaEnPrestamo(Copia copia) {
+		 
+	 		int i = 0;
+	 		Prestamo encontrado = null;
+	 		
+	 		
+			while (prestamo.size() > i && encontrado == null ) {
+	 			if (prestamo.get(i).getUnLibro().getIdCopia() == copia.getIdCopia()) {				
+	 				encontrado= prestamo.get(i);
+	 			}
+	 			i++;
+	 		}
+	 		return encontrado;
+	 	}
 	
 }
