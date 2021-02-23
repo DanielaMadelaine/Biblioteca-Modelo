@@ -2,12 +2,18 @@ package Modelo;
 
 import java.util.Date;
 
-public class Autor {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table public class Autor {
 	
 	
-	private String Nombre;
-	private String Nacionalidad;
-	private Date fechaNac;
+	@Column @Id private String Nombre;
+	@Column private String Nacionalidad;
+	@Column private Date fechaNac;
 	
 	
 	

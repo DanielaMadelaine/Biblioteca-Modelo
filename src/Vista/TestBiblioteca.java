@@ -11,6 +11,7 @@ import Modelo.EstadoCopia;
 import Modelo.Lector;
 import Modelo.Multa;
 import Modelo.TipoLibro;
+import Persistencia.AutorDAO;
 
 public class TestBiblioteca {
 
@@ -28,6 +29,7 @@ public class TestBiblioteca {
 		System.out.println(tipo1);
 		
 		//Cargamos los autores
+		// Cargue fechas placebo solo para hacer pruebas cambiar luego
 		
 		Date nac = new Date(121,8,24);
 		Date nac2 = new Date(121,8,26);
@@ -93,21 +95,29 @@ public class TestBiblioteca {
 		
 		
 		
-		biblioteca.PrestarLibro(libro2, LectorA);
+		//biblioteca.PrestarLibro(libro2, LectorA);
 		
-		biblioteca.PrestarLibro(libro5, LectorA);
-		LectorA.setMulta(new Multa(LectorA));
-		biblioteca.PrestarLibro(libro6, LectorA);
-		biblioteca.PrestarLibro(libro9, LectorA);
+		//biblioteca.PrestarLibro(libro5, LectorA);
+		//LectorA.setMulta(new Multa(LectorA));
+		///biblioteca.PrestarLibro(libro6, LectorA);
+		//biblioteca.PrestarLibro(libro9, LectorA);
 		
 		//biblioteca.listarLibros();
 		
-		biblioteca.DevolverLibro(libro4, LectorA);
-		biblioteca.DevolverLibro(libro2, LectorA);
+		//biblioteca.DevolverLibro(libro4, LectorA);
+		//biblioteca.DevolverLibro(libro2, LectorA);
 		
 		//LectorA.listarPrestamos();
 		
+		// Persistencia
 		
+	AutorDAO dao = new AutorDAO();
+		try {
+			dao.agregarAutor(autor6);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		
