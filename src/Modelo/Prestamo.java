@@ -6,10 +6,9 @@ public class Prestamo {
 	private Copia unLibro;
 	private Lector unLector;
 	private Date finicioPrestamo;
-	private Date FfinPrestamo;
+	private Date FfinPrestamo= new Date();
 	
-	
-	
+
 	public Prestamo(Copia unLibro, Lector unLector, Date finicioPrestamo) {
 		super();
 		this.unLibro = unLibro;

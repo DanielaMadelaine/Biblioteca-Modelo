@@ -2,6 +2,8 @@ package Vista;
 
 import java.sql.Date;
 import java.util.ArrayList;
+
+import Excepciones.BibliotecaException;
 import Modelo.Autor;
 import Modelo.Biblioteca;
 import Modelo.Copia;
@@ -12,7 +14,7 @@ import Modelo.TipoLibro;
 
 public class TestBiblioteca {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BibliotecaException  {
 		// TODO Auto-generated method stub
 		
 		
@@ -86,19 +88,24 @@ public class TestBiblioteca {
 		
 		biblioteca.setCopias(libros);
 		
-		biblioteca.listarLibros();
+		//biblioteca.listarLibros();
+		
 		
 		
 		
 		biblioteca.PrestarLibro(libro2, LectorA);
-		biblioteca.PrestarLibro(libro3, LectorA);
+		
+		biblioteca.PrestarLibro(libro5, LectorA);
 		LectorA.setMulta(new Multa(LectorA));
 		biblioteca.PrestarLibro(libro6, LectorA);
 		biblioteca.PrestarLibro(libro9, LectorA);
 		
-		biblioteca.listarLibros();
+		//biblioteca.listarLibros();
 		
+		biblioteca.DevolverLibro(libro4, LectorA);
+		biblioteca.DevolverLibro(libro2, LectorA);
 		
+		//LectorA.listarPrestamos();
 		
 		
 		

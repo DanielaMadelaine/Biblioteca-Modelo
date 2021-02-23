@@ -87,5 +87,14 @@ public class Lector {
 	 		}
 	 		return encontrado;
 	 	}
+	 
+	 public void listarPrestamos() {
+	 		
+	 		
+	 		for (Prestamo p : prestamo) {
+	 				System.out.println("prestamos: "+ p.getUnLibro().getTitulo());
+		
+	 		}
+	 	}
 	
 }

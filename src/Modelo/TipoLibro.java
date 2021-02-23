@@ -12,8 +12,6 @@ public class TipoLibro {
 		this.descripcion = descripcion;
 	}
 	
-	
-	
 	public int getIdTipo() {
 		return idTipo;
 	}
@@ -26,7 +24,6 @@ public class TipoLibro {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 
 
 	@Override
