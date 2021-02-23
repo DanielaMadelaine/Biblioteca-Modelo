@@ -15,7 +15,9 @@ import javax.persistence.Table;
 	@Column private String Nacionalidad;
 	@Column private Date fechaNac;
 	
-	
+	public Autor() {
+		
+	}
 	
 	public Autor(String nombre, String nacionalidad, Date fechaNac) {
 		super();

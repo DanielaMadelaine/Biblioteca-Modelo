@@ -1,5 +1,7 @@
 package Persistencia;
 
+import java.util.ArrayList;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -24,5 +26,8 @@ public class AutorDAO {
 	
 	
 	public void ConsultarAutores() {
+		EntityManager em = managerFactory.createEntityManager();
+		ArrayList<Autor> lista = (ArrayList<Autor>) em.createQuery("select a from Autor a").getResultList();
+		System.out.println(lista +" Autores de la db..");
 	}
 }

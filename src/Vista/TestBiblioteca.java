@@ -2,7 +2,7 @@ package Vista;
 
 import java.sql.Date;
 import java.util.ArrayList;
-
+import javax.xml.ws.Endpoint;
 import Excepciones.BibliotecaException;
 import Modelo.Autor;
 import Modelo.Biblioteca;
@@ -12,6 +12,7 @@ import Modelo.Lector;
 import Modelo.Multa;
 import Modelo.TipoLibro;
 import Persistencia.AutorDAO;
+import WebService.AutorService;
 
 public class TestBiblioteca {
 
@@ -109,19 +110,22 @@ public class TestBiblioteca {
 		
 		//LectorA.listarPrestamos();
 		
-		// Persistencia
+		// Aca pruebo Persistencia funciona
 		
-	AutorDAO dao = new AutorDAO();
+	/*AutorDAO dao = new AutorDAO();
 		try {
-			dao.agregarAutor(autor6);
+			//dao.agregarAutor(autor6);
+			dao.ConsultarAutores();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
+		// creamos la instanca del web service
+		Endpoint endPoint = Endpoint.publish("http://localhost:8080/AutorService", new AutorService());
 		
-		
+		//tuve error del web service con respecto a los puertos no pude bajar el wsdl , chequear 
 		
 		
 		
